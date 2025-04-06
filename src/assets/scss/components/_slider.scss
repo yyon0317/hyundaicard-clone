@@ -1,0 +1,126 @@
+.hero-slider-grouped {
+  width: 100%;
+  padding: 40px 0;
+  background-color: #fff;
+  position: relative;
+
+  .hero-swiper-grouped {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .slide-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 24px;
+  }
+
+  .banner-card {
+    width: calc(33.333% - 16px);
+    background-color: #f8f8f8;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    &:hover {
+      transform: translateY(-6px);
+    }
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: #333;
+    background: rgba(255, 255, 255, 0.85);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+
+    &::after {
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+
+  .swiper-button-prev {
+    left: 0;
+  }
+
+  .swiper-button-next {
+    right: 0;
+  }
+
+  .swiper-pagination {
+    text-align: center;
+    margin-top: 16px;
+  }
+
+  .swiper-pagination-bullet {
+    background: #ccc;
+    opacity: 1;
+    margin: 0 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+
+    &-active {
+      background: #000;
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  .slider-controls {
+    text-align: center;
+    margin-top: 20px;
+
+    .play-pause-btn {
+      padding: 8px 16px;
+      font-size: 14px;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #333;
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .slide-group {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .banner-card {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 20px 0;
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      display: none;
+    }
+  }
+}
