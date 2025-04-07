@@ -104,23 +104,4 @@
     }
   }
 
-  @media (max-width: 1024px) {
-    .slide-group {
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .banner-card {
-      width: 100%;
-    }
-  }
-
-  @media (max-width: 768px) {
-    padding: 20px 0;
-
-    .swiper-button-prev,
-    .swiper-button-next {
-      display: none;
-    }
-  }
 }

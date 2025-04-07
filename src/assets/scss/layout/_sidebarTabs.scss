@@ -1,0 +1,91 @@
+.sidebar-tabs {
+    font-family: 'Noto Sans KR', sans-serif;
+  
+    section {
+      margin-bottom: 36px;
+    }
+  
+    .sidebar-title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  
+      .arrow {
+        font-size: 18px;
+        color: #777;
+      }
+    }
+  
+    /* 금융박스 스타일 */
+    .finance-box {
+      .sidebar-list {
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        overflow: hidden;
+  
+        li {
+          border-bottom: 1px solid #eee;
+  
+          &:last-child {
+            border-bottom: none;
+          }
+  
+          a {
+            display: block;
+            padding: 14px 16px;
+            text-decoration: none;
+            color: #111;
+  
+            strong {
+              display: block;
+              font-size: 14px;
+              font-weight: 600;
+            }
+  
+            span {
+              display: block;
+              font-size: 13px;
+              color: #888;
+              margin-top: 4px;
+            }
+  
+            &:hover {
+              background: #f9f9f9;
+  
+              strong,
+              span {
+                color: #0070f3;
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    /* 뉴스박스 스타일 */
+    .notice-box {
+      .sidebar-list.notice {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+  
+        li a {
+          font-size: 13.5px;
+          color: #333;
+          text-decoration: none;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+  
+          &:hover {
+            color: #0070f3;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  
