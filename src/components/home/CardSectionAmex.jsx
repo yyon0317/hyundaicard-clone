@@ -3,6 +3,8 @@ import React from 'react';
 import { amexCards } from '../../constants/cards';
 import '../../assets/scss/components/_card-section.scss';
 
+import tag_amex_livelife from '../../assets/img/tag_amex_livelife.svg';
+
 const CardSectionAmex = () => {
   return (
     <section className="card-section">
@@ -11,7 +13,7 @@ const CardSectionAmex = () => {
         <div className="card-section__text">
           <h2>American<br />Express</h2>
           <img
-            src="/assets/img/tag_amex_livelife.svg"
+            src={tag_amex_livelife}
             alt="Don't live life without it"
             className="amex-tag"
           />

@@ -1,5 +1,4 @@
-// ✅ GNB 전체 구조 통합 (Header + SubMenu hover 상태를 하나로 처리)
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Header, SubMenu, TopBanner } from '../components/common';
 import HeroSlider from '../components/home/HeroSlider';
 import CardSectionOriginals from '../components/home/CardSectionOriginals';
@@ -8,35 +7,62 @@ import CardSectionChampion from '../components/home/CardSectionChampion';
 import EventCardsGrid from '../components/home/EventCardsGrid';
 import SidebarRight from '../components/home/SidebarRight';
 import SidebarTabs from '../components/home/SidebarTabs';
+import AppDownloadSlider from '../components/home/AppDownloadSlider';
+import ConsumerInfo from '../components/home/ConsumerInfo';
+import Footer from '../components/common/Footer';
 
 function HomeView() {
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
 
+  const sidebarRef = useRef(null);
+  const scrollStopRef = useRef(null); // 스크롤 멈춤 기준
+
+  useEffect(() => {
+    const sidebar = sidebarRef.current;
+    const stopTarget = scrollStopRef.current;
+    if (!sidebar || !stopTarget) return;
+
+    const headerOffset = 40;
+    let ticking = false;
+
+    const updateSidebar = () => {
+      const scrollY = window.scrollY;
+      const sidebarHeight = sidebar.offsetHeight;
+      const stopY = stopTarget.getBoundingClientRect().top + window.scrollY;
+      const maxTop = stopY - sidebarHeight;
+      const newTop = Math.min(scrollY + headerOffset, maxTop);
+
+      sidebar.style.top = `${newTop}px`;
+      ticking = false;
+    };
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateSidebar);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <>
       <TopBanner />
 
-      {/* Header + SubMenu를 하나의 wrapper로 통합 */}
+      {/* GNB */}
       <div
         className="gnb-wrapper"
         onMouseEnter={() => setIsSubMenuOpen(true)}
         onMouseLeave={() => {
           setIsSubMenuOpen(false);
-          setActiveMenu(null); // 🔥 active 제거
+          setActiveMenu(null);
         }}
       >
-        <Header
-          onMenuHover={(key) => {
-            setActiveMenu(key);
-          }}
-          activeKey={activeMenu}
-        />
-        <SubMenu
-          isVisible={isSubMenuOpen}
-          menuKey={activeMenu}
-          onHover={(v) => setIsSubMenuOpen(v)}
-        />
+        <Header onMenuHover={setActiveMenu} activeKey={activeMenu} />
+        <SubMenu isVisible={isSubMenuOpen} menuKey={activeMenu} onHover={setIsSubMenuOpen} />
       </div>
 
       <main className="home">
@@ -44,12 +70,21 @@ function HomeView() {
           <HeroSlider />
           <CardSectionOriginals />
           <CardSectionAmex />
-          <CardSectionChampion />
+
+          {/* 멈출 기준 ref 적용 */}
+          <div ref={scrollStopRef}>
+            <CardSectionChampion />
+          </div>
+
           <EventCardsGrid />
+          <Footer />
         </div>
-        <aside className="sidebar">
+
+        <aside ref={sidebarRef} className="sidebar">
           <SidebarRight />
           <SidebarTabs />
+          <AppDownloadSlider />
+          <ConsumerInfo /> 
         </aside>
       </main>
     </>

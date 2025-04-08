@@ -5,7 +5,7 @@ import '../../assets/scss/components/_card-section.scss';
 
 const CardSectionChampion = () => {
   return (
-    <section className="card-section">
+    <section  className="card-section scrollstop">
       <div className="card-section__inner">
         {/* 왼쪽 텍스트 */}
         <div className="card-section__text">

@@ -1,0 +1,63 @@
+.app-download-slider {
+    margin-top: 40px;
+    padding: 20px 0;
+    border-top: 1px solid #e0e0e0;
+  
+    .swiper {
+      overflow: hidden;
+    }
+  
+    .swiper-slide {
+      display: flex;
+      align-items: center;
+      height: 60px;
+    }
+  
+    .slide-content {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #000;
+      width: 100%;
+  
+      img {
+        width: 36px;
+        height: 36px;
+        object-fit: contain;
+        display: block;
+        flex-shrink: 0;
+      }
+  
+      .text {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.4;
+        word-break: keep-all;
+        white-space: pre-line; // 줄바꿈 적용
+      }
+    }
+  
+    .swiper-pagination {
+      display: flex;
+      justify-content: center;
+      margin-top: 12px;
+  
+      .swiper-pagination-bullet {
+        background-color: #ccc;
+        opacity: 1;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        margin: 0 4px;
+        transition: all 0.3s ease;
+      }
+  
+      .swiper-pagination-bullet-active {
+        width: 14px;
+        background-color: #000;
+        border-radius: 4px;
+      }
+    }
+  }
+  
