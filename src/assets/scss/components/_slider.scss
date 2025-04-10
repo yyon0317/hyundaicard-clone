@@ -1,11 +1,9 @@
 .hero-slider-grouped {
-  width: 100%;
   padding: 40px 0;
   background-color: #fff;
   position: relative;
 
   .hero-swiper-grouped {
-    width: 100%;
     margin: 0 auto;
     position: relative;
   }
@@ -18,11 +16,8 @@
   }
 
   .banner-card {
-    width: calc(33.333% - 16px);
-    background-color: #f8f8f8;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease;
 
     img {
@@ -37,28 +32,24 @@
   }
 
   .swiper-button-prev,
-  .swiper-button-next {
-    color: #333;
-    background: rgba(255, 255, 255, 0.85);
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-    top: 50%;
-    transform: translateY(-50%);
+  .swiper-button-next{
     position: absolute;
-
-    &::after {
-      font-size: 16px;
-      font-weight: bold;
-    }
+    top: 50%;
+    width: 52px;
+    height: 52px;
+    z-index: 10;
+    background-size: 52px 52px;
+    background-repeat: no-repeat;
+    transform: translateY(-50%);
   }
 
   .swiper-button-prev {
+    background-image: url('../../img/ico_arrow_prev.png');
     left: 0;
-  }
+}
 
   .swiper-button-next {
+    background-image: url('../../img/ico_arrow_next.png');
     right: 0;
   }
 
@@ -88,14 +79,24 @@
     margin-top: 20px;
 
     .play-pause-btn {
-      padding: 8px 16px;
-      font-size: 14px;
-      background-color: #000;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
       cursor: pointer;
-      transition: background-color 0.3s;
+      position: relative;
+      margin-right: 12px;
+      vertical-align: top;
+      width: 20px;
+      height: 10px;
+      border-radius: 5px;
+      background-size: 6px 6px;
+      cursor: pointer;
+
+      &.play{
+        background: rgba(0, 0, 0, 1)url(../../img/ico_home_play_wht.png) no-repeat 50% 50%;
+      }
+
+      &.stop{
+        background: rgba(0, 0, 0, 1) url(../../img/ico_home_pause_wht.png) no-repeat 50% 50%;
+
+      }
 
       &:hover {
         background-color: #333;

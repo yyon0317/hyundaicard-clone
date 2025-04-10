@@ -2,9 +2,9 @@ import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import '../../assets/scss/components/_slider.scss';
+// import 'swiper/css/navigation';
+// import 'swiper/css/pagination';
+// import '../../assets/scss/components/_slider.scss';
 import sliderData from '../../constants/sliderData';
 
 const chunkSlides = (slides, size) => {
@@ -38,7 +38,10 @@ const HeroSlider = () => {
         modules={[Navigation, Pagination, Autoplay]}
         loop
         autoplay={{ delay: 5000, disableOnInteraction: false }}
-        pagination={{ clickable: true }}
+        pagination={{
+          clickable: true,
+          el: '.custom-pagination' 
+        }}
         navigation
         className="hero-swiper-grouped"
         ref={swiperRef}
@@ -55,9 +58,10 @@ const HeroSlider = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+      
       <div className="slider-controls">
-        <button onClick={handlePlayPause} className="play-pause-btn">
-          {isPlaying ? 'Pause' : 'Play'}
+        <div className="custom-pagination"></div> 
+        <button onClick={handlePlayPause} className={`play-pause-btn ${isPlaying ? 'stop' : 'play'}`}>
         </button>
       </div>
     </section>

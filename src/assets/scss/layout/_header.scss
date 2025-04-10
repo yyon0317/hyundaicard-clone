@@ -3,12 +3,13 @@
     border-bottom: 1px solid #eaeaea;
     position: relative;
     z-index: 10;
-  
+    height: 80px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
     .header__inner {
       position: relative;
       max-width: 1600px;
       margin: 0 auto;
-      padding: 16px 20px;
+      padding: 25px 20px;
       display: flex;
       align-items: center;
       justify-content: flex-start;
@@ -95,23 +96,20 @@
         color: #000;
         font-weight: 500;
         transition: 0.2s ease;
-  
-        &.active {
-          color: #0070f3;
-        }
+        font-family: 'YouandiNewKr';
+
       }
   
       &.active a {
-        color: #0070f3;
   
         &::after {
           content: '';
           position: absolute;
-          bottom: -6px;
+          bottom: -28px;
           left: 0;
           width: 100%;
           height: 2px;
-          background-color: #0070f3;
+          background-color: #000;
         }
       }
     }
