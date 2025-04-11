@@ -1,7 +1,6 @@
 .footer {
-    background-color: #f8f8f8;
     padding: 40px 20px;
-    font-size: 14px;
+    font-size: 12px;
     color: #333;
     line-height: 1.6;
   
@@ -18,14 +17,14 @@
       flex: 1 1 220px;
   
       h4 {
-        font-size: 16px;
         font-weight: 600;
         margin-bottom: 16px;
   
         span {
           margin-right: 12px;
           cursor: pointer;
-          font-weight: 500;
+          font-weight: 600;
+          line-height: 16px;
   
           &:hover {
             text-decoration: underline;
@@ -38,8 +37,14 @@
         padding: 0;
   
         li {
+          line-height: 16px;
           margin-bottom: 8px;
-  
+          display: flex;
+          justify-content: space-between;
+          span{
+            display: block;
+            width: 50%;
+          }
           a {
             text-decoration: none;
             color: #333;
@@ -53,6 +58,7 @@
   
       p {
         margin: 4px 0;
+        line-height: 16px;
       }
   
       &.last {

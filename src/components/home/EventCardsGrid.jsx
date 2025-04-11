@@ -1,7 +1,6 @@
 // components/home/EventCardsGrid.jsx
 import React from 'react';
 import { eventCards } from '../../constants/cards';
-import '../../assets/scss/components/_card-section.scss';
 
 const EventCardsGrid = () => {
   return (

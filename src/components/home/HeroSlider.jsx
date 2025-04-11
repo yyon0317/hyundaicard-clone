@@ -60,9 +60,9 @@ const HeroSlider = () => {
       </Swiper>
       
       <div className="slider-controls">
-        <div className="custom-pagination"></div> 
         <button onClick={handlePlayPause} className={`play-pause-btn ${isPlaying ? 'stop' : 'play'}`}>
         </button>
+        <div className="custom-pagination"></div> 
       </div>
     </section>
   );

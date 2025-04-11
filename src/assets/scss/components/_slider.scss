@@ -1,5 +1,5 @@
 .hero-slider-grouped {
-  padding: 40px 0;
+  padding: 40px 0 0;
   background-color: #fff;
   position: relative;
 
@@ -62,11 +62,10 @@
     background: #ccc;
     opacity: 1;
     margin: 0 6px;
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     display: inline-block;
-
     &-active {
       background: #000;
       width: 10px;
@@ -80,24 +79,34 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
+    .custom-pagination{
+      width: auto;
+      .swiper-pagination-bullet-active{
+        width: 16px !important;
+        border-radius: 8px;
+      }
+    }
 
     .play-pause-btn {
       cursor: pointer;
       position: relative;
-      margin-right: 12px;
       vertical-align: top;
       width: 20px;
       height: 10px;
       border-radius: 5px;
       background-size: 6px 6px;
       cursor: pointer;
+      margin-right: 5px;
 
       &.play{
         background: rgba(0, 0, 0, 1)url(../../img/ico_home_play_wht.png) no-repeat 50% 50%;
+        background-size: 30%;
       }
 
       &.stop{
         background: rgba(0, 0, 0, 1) url(../../img/ico_home_pause_wht.png) no-repeat 50% 50%;
+        background-size: 30%;
 
       }
 

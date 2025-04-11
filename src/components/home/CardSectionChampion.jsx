@@ -1,11 +1,10 @@
 // components/home/CardSectionChampion.jsx
 import React from 'react';
 import { championCards } from '../../constants/cards';
-import '../../assets/scss/components/_card-section.scss';
 
 const CardSectionChampion = () => {
   return (
-    <section  className="card-section scrollstop">
+    <section  className="card-section type01 scrollstop">
       <div className="card-section__inner">
         {/* 왼쪽 텍스트 */}
         <div className="card-section__text">

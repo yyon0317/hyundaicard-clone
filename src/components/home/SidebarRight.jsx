@@ -29,7 +29,9 @@ const SidebarRight = () => {
     <aside className="sidebar-right">
       {/* 로그인 박스 */}
       <div className="login-box">
-        <h3>로그인</h3>
+        <h4 className="sidebar-title">
+        로그인<span className="arrow">다른 로그인 방법 ›</span>
+        </h4>
         <div className="tabs">
           <button
             className={activeTab === 'pin' ? 'active' : ''}

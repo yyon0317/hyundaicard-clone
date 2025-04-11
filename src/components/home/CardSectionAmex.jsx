@@ -1,13 +1,12 @@
 // components/home/CardSectionAmex.jsx
 import React from 'react';
 import { amexCards } from '../../constants/cards';
-import '../../assets/scss/components/_card-section.scss';
 
 import tag_amex_livelife from '../../assets/img/tag_amex_livelife.svg';
 
 const CardSectionAmex = () => {
   return (
-    <section className="card-section">
+    <section className="card-section type02">
       <div className="card-section__inner">
         {/* 왼쪽 텍스트 */}
         <div className="card-section__text">
@@ -28,7 +27,6 @@ const CardSectionAmex = () => {
                 <div className="card-img">
                   <img src={card.image} alt={card.name} />
                 </div>
-                <p className="card-name">{card.name}</p>
               </a>
               <p className="card-name">
                 {card.name.split('\n').map((line, i) => (

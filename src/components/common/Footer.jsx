@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../assets/scss/layout/_footer.scss';
 
 import logoBSI from '../../assets/img/logo_com_img_bsi.png';
 import logoWA from '../../assets/img/logo_com_img_wa.png';
@@ -12,11 +11,11 @@ const Footer = () => {
           <h4>고객센터</h4>
           <ul>
             <li>1577-6000</li>
-            <li>카드신청 1577-0100</li>
-            <li>금융신청 1577-6100</li>
-            <li>도난분실신고 1577-6200</li>
-            <li>점자카드신청 1566-5630</li>
-            <li>해외 82-2-3015-9000</li>
+            <li><strong>카드신청</strong> <span>1577-0100</span></li>
+            <li><strong>금융신청</strong> <span>1577-6100</span></li>
+            <li><strong>도난분실신고</strong> <span>1577-6200</span></li>
+            <li><strong>점자카드신청</strong> <span>1566-5630</span></li>
+            <li><strong>해외</strong> <span>82-2-3015-9000</span></li>
           </ul>
         </div>
         <div className="footer-section">

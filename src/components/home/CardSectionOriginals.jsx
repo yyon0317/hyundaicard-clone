@@ -1,11 +1,10 @@
 // components/home/CardSectionOriginals.jsx
 import React from 'react';
 import { originalCards } from '../../constants/cards';
-import '../../assets/scss/components/_card-section.scss';
 
 const CardSectionOriginals = () => {
   return (
-    <section className="card-section">
+    <section className="card-section type01">
       <div className="card-section__inner">
         {/* 왼쪽 텍스트 */}
         <div className="card-section__text">
