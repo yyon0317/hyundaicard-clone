@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# HyundaiCard Clone Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+현대카드 공식 홈페이지를 벤치마킹하여 제작한 React 기반의 클론 프로젝트입니다.  
+퍼블리셔 포트폴리오 용도로 제작되었으며, 실제 디자인과 기능을 최대한 유사하게 구현하는 데 집중했습니다.
 
-## Available Scripts
+## ✅ 프로젝트 개요
 
-In the project directory, you can run:
+- **제작기간**: 2025년
+- **목적**: 현대카드 홈페이지 UI/UX 클론, 반응형 퍼블리싱 포트폴리오
+- **기술스택**:
+  - React (CRA)
+  - SCSS (Sass module 구조로 관리)
+  - Swiper.js (슬라이더 구성)
+  - React Router (페이지 전환 예정)
 
-### `npm start`
+## ✅ 주요 구현 요소
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 1. GNB(Global Navigation Bar)
+- 상단 메뉴 + 하위 SubMenu 구조
+- hover 시 서브메뉴 열림 / 사라짐 제어
+- 마우스 아웃 시 활성화 제거
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 2. 메인 Hero 슬라이더
+- Swiper를 사용한 3개 묶음 슬라이드
+- autoplay / navigation(화살표) / pagination 적용
+- 이미지 클릭 시 링크 연결
 
-### `npm test`
+### 3. 카드 섹션
+- Originals / Amex / Champion 카드 블록 별 구성
+- hover 시 애니메이션 적용
+- 카드 상세 연동 예정
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 4. 사이드바 (우측)
+- 금융정보/공지사항 탭 전환
+- 스크롤 시 따라오다가 특정 위치(`.scrollstop`)에서 부드럽게 정지
+- `requestAnimationFrame` + `transition`으로 자연스러운 움직임 구현
 
-### `npm run build`
+### 5. 앱 다운로드 슬라이더
+- Swiper 적용 / 모바일 앱 홍보 배너
+- 아이콘 + 설명 + 페이지네이션 점
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 6. 소비자 정보 안내
+- 이용약관/고객센터/신고페이지 등 링크 모음
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 7. Footer
+- 고객센터 정보 / 회사 소개 / 사업자 정보
+- 인증마크 이미지 포함
+- 반응형 대응
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📁 디렉토리 구조
 
-### `npm run eject`
+```
+src/
+├── assets/
+│   ├── img/                  # 이미지 리소스
+│   └── scss/
+│       ├── base/             # reset, variables
+│       ├── layout/           # header, footer, submenu, sidebar
+│       └── components/       # 각 섹션별 스타일
+├── components/
+│   ├── common/               # Header, SubMenu, Footer, ConsumerInfo
+│   └── home/                 # HeroSlider, CardSection*, Sidebar*
+├── constants/menus.js        # 메뉴 정의 JSON
+├── pages/HomeView.jsx        # 메인 뷰 (index)
+└── App.js                    # Router 구성 예정
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 💡 향후 추가 기능 (계획)
+- 카드 상세 페이지 연결 (React Router)
+- 모바일 GNB 대응 (햄버거 메뉴)
+- 애니메이션 세부 효과 향상 (GSAP / AOS 고려)
+- GitHub Pages 배포 및 링크 공유
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+🔗 이 프로젝트는 현대카드 공식 사이트를 참고해 **비상업적 학습 목적**으로 제작되었습니다.
