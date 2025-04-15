@@ -71,12 +71,13 @@ function HomeView() {
           <CardSectionOriginals />
           <CardSectionAmex />
 
+          
+            <CardSectionChampion />
+          
           {/* 멈출 기준 ref 적용 */}
           <div ref={scrollStopRef}>
-            <CardSectionChampion />
-          </div>
-
           <EventCardsGrid />
+          </div>
           <Footer />
         </div>
 

@@ -4,7 +4,7 @@ import { eventCards } from '../../constants/cards';
 
 const EventCardsGrid = () => {
   return (
-    <section className="card-section">
+    <section className="card-section ">
       <div className="card-section__inner">
         <div className="card-section__grid">
           {eventCards.map((card, idx) => (

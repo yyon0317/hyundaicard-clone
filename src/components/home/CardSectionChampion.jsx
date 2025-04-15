@@ -4,7 +4,7 @@ import { championCards } from '../../constants/cards';
 
 const CardSectionChampion = () => {
   return (
-    <section  className="card-section type01 scrollstop">
+    <section  className="card-section type01">
       <div className="card-section__inner">
         {/* 왼쪽 텍스트 */}
         <div className="card-section__text">

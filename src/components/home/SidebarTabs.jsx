@@ -34,7 +34,7 @@ const SidebarTabs = () => {
       {/* 금융 영역 */}
       <section className="finance-box">
         <h4 className="sidebar-title">
-          금융 <span className="arrow">›</span>
+          금융 <a href="/"><span className="arrow">›</span></a>
         </h4>
         <ul className="sidebar-list">
           {financeItems.map((item, idx) => (
@@ -51,7 +51,7 @@ const SidebarTabs = () => {
       {/* 뉴스·공지사항 영역 */}
       <section className="notice-box">
         <h4 className="sidebar-title">
-          뉴스 · 공지사항 <span className="arrow">›</span>
+          뉴스 · 공지사항 <a href="/"><span className="arrow">›</span></a>
         </h4>
         <ul className="sidebar-list notice">
           {noticeItems.map((text, idx) => (
